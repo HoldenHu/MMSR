@@ -1,0 +1,38 @@
+## model config
+embedding_size: 128
+aggregator: hete_attention  # rgat/kv_attention/hete_attention     gcn/graphsage/gat
+alpha: 0.1 # Alpha for the leaky_relu
+
+auxiliary_info: ['pos','node_type'] # []/['node_type']/['pos','node_type'] for enriching node representation
+# auxiliary_info: ['pos']
+# auxiliary_info: ['node_type']
+
+max_relid: 10
+n_layer: 1
+fusion_type: asy_mask # fusion between hete and homo; cat/gate/asy_mask
+dropout_local: 0.4 
+dropout_atten: 0.2
+
+seq_pooling: last # last/last_attention/attention/mean
+modality_prediction: False # whether add modality prediction multi-task # TODO: still not good
+
+loss_type: 'CE'
+
+# dataset config
+dataset_type: dataset_mmsr
+
+# training config
+epoch: 100
+batch_size: 128
+lr: 0.002
+lr_dc: 0.0001 # learning rate decay
+lr_dc_step: 40 # the number of steps after which the learning rate decay
+l2: 0 # l2 penalty, [0, 1e-5, e-4]
+patience: 8 # num of epochs not update the best result, early stopping
+
+
+# eval config
+topk: [5,20]
+
+cuda_id: 1
+tune_parameters: True
