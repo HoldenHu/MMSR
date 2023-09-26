@@ -1,6 +1,6 @@
 # MMSR (Multi-modality enriched Sequential Recommendation)
 
-Currently, this is an anonymous repository temporarily storing our CIKM submission's code, with key information concealed (including any personal and institutional details). The complete repository will be released after the paper's acceptance (including baseline implementations and other details).
+This is the PyTorch implementation for MMSR proposed in the paper Adaptive Multi-Modalities Fusion in Sequential Recommendation Systems (https://arxiv.org/pdf/2308.15980v1.pdf), CIKM, 2023.
 The model name in the code is VLGraph (Visio-linguistic Graph).
 
 ### Preprocess
