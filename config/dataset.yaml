@@ -1,0 +1,58 @@
+seed: 2023
+reproducibility: True
+
+validation: False
+valid_portion: 0.1
+rating_threshold: 0  # <rating_threshold would be droped
+split_ratio: 0.2
+filter_strategy: 'core'  # no/core/user; core: would iteractively filter users and items; user: would filter once
+train_test_strategy: 'ratio'  # time-based/ratio; leave-one-out: only left one item for testing; time-based: based on timestamp, 一刀切; ratio: user-based ratio
+core: 5  # <user/item_core would be droped
+
+
+image_cluster_num: 20  # node number of images
+text_cluster_num: 20  # node number of text
+link_k: 1  # how many images/text linked with a item
+cluster_method: 'kmeans'  # kmeans/gmm
+image_extractor: 'resnet' # resnet/local
+text_extractor: 't5' # tfidf/t5
+
+
+num_node:
+  sample: 310
+  fashion: 59925
+  ml-1m: 3308
+
+
+data_folder: 
+  sample: '/home/holdenhu/Projects/CASRec/data/sample'
+  fashion: '/ssd1/holdenhu/Amazon_dataset/Amazon_Fashion/'
+  beauty: '/ssd1/holdenhu/Amazon2014_dataset/Amazon_Beauty/'
+  sport: '/ssd1/holdenhu/Amazon2014_dataset/Amazon_Sport/'
+  clothing: '/ssd1/holdenhu/Amazon2014_dataset/Amazon_Clothing/'
+  toy: '/ssd1/holdenhu/Amazon2014_dataset/Amazon_Toy/'
+  kitchen: '/ssd1/holdenhu/Amazon2014_dataset/Amazon_Kitchen/'
+  phone: '/ssd1/holdenhu/Amazon2014_dataset/Amazon_Phone/'
+  ml-1m: '/ssd1/holdenhu/ML_dataset/ml-1m/'
+
+cluster_num:
+  beauty: 20
+  sample: 2
+  fashion: 20
+  ml-1m: 20
+  clothing: 20
+  sport: 20
+  toy: 20
+  kitchen: 20
+  phone: 20
+
+k: # how many nodes connected to an item
+  beauty: 1
+  sample: 2
+  fashion: 1
+  ml-1m: 2
+  clothing: 1
+  sport: 1
+  toy: 1
+  kitchen: 1
+  phone: 1
